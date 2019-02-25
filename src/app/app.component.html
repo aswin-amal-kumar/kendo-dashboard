@@ -1,0 +1,34 @@
+<main>
+  <app-header></app-header>
+
+  <section class="container">
+    <div class="population-stats">
+      <app-data-card
+        [body]="population?.today?.population | number"
+        [footer]="population?.tomorrow?.population | number"
+        [heading]="'World Population'"
+        [footerHeading]="'Tomorrow'"
+      ></app-data-card>
+      <app-data-card
+        [body]="youthPopulation?.total | number"
+        [footer]="youthPopulation?.females | number"
+        [heading]="'Youth Population'"
+        [footerHeading]="'Female'"
+        [subHeading]="'Aged: ' + youthPopulation?.age"
+      ></app-data-card>
+      <app-data-card
+        [body]="agedPopulation?.total | number"
+        [footer]="agedPopulation?.males | number"
+        [heading]="'Aged Population'"
+        [footerHeading]="'Male'"
+        [subHeading]="'Aged: ' + agedPopulation?.age"
+      ></app-data-card>
+    </div>
+    <div class="population-years__comparison">
+      <app-population-chart></app-population-chart>
+    </div>
+    <div class="world-population__data">
+      <app-population-grid></app-population-grid>
+    </div>
+  </section>
+</main>
